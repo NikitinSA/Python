@@ -13,4 +13,4 @@ while userNum:
     sumDigits += userNum % 10
     userNum //= 10
     
-print(int(sumDigits))
+print(f"Сумма цифр в числе в вашем числе = {int(sumDigits)}")
