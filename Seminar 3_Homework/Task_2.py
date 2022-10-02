@@ -11,7 +11,6 @@ out
 [2, 2, 4, 8, 8]
 [16, 16, 4]"""
 
-from audioop import mul
 from random import sample
 
 size = int(input("Введите размерность списка: "))
