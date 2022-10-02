@@ -15,8 +15,8 @@ from random import sample
 
 size = int(input("Введите размерность списка: "))
 
-def fillList(size):
-    arr = sample(range(1, 10), size)
+def multiplicationDigits(size):
+    arr = sample(range(1, 20), size)
     print(arr)
     mult = 0
     count = 1
@@ -33,4 +33,4 @@ def fillList(size):
             numList.append(mult)
     print(numList)
     
-fillList(size)
+multiplicationDigits(size)
