@@ -16,7 +16,7 @@ from random import sample
 
 size = int(input("Введите размерность списка: "))
 
-def fillList(size):
+def sumDigits(size):
     arr = sample(range(0, 100), size)
     print(arr)
     summ = 0
@@ -24,4 +24,4 @@ def fillList(size):
         summ += arr[i]
     print(f"Сумма элементов списка, стоящих на нечётных позициях = {summ}")
 
-fillList(size)
+sumDigits(size)
