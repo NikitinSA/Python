@@ -151,3 +151,43 @@ out
 В файле находится N натуральных чисел, записанных через пробел. Среди чисел не хватает одного, чтобы выполнялось условие A[i] - 1 = A[i-1]. Найдите это число.
 ## Задача 2
 Дан список чисел. Создайте список, в который попадают числа, описываемые возрастающую последовательность. Порядок элементов менять нельзя.
+# Домашнее задание к семинару 5
+## Задача 1
+Напишите программу, удаляющую из текста все слова, содержащие "абв". В тексте используется разделитель пробел.
+in
+Number of words: 10
+out
+авб абв бав абв вба бав вба абв абв абв
+авб бав вба бав вба
+in
+Number of words: 6
+out
+ваб вба абв ваб бва абв
+ваб вба ваб бва
+in
+Number of words: -1
+out
+The data is incorrect
+## Задача 2
+Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных.Входные и выходные данные хранятся в отдельных текстовых файлах.
+
+in
+Enter the name of the file with the text:
+'text_words.txt'
+Enter the file name to record:
+'text_code_words.txt'
+Enter the name of the file to decode:
+'text_code_words.txt'
+
+out
+aaaaavvvvvvvvvvvvvvvvvvvvvvvvvvvvvssssDDDdddFFggggOOiiiaa
+vvvvvvvvvvvbbwwPPuuuTTYyWWQQ
+
+out in file
+'text_words.txt'
+aaaaavvvvvvvvvvvvvvvvvvvvvvvvvvvvvssssDDDdddFFggggOOiiiaa
+vbbwwPPuuuTTYyWWQQ
+
+'text_code_words.txt'
+5a29v4s3D3d2F4g2O3i2a1
+1v2b2w2P3u2T1Y1y2W2Q
