@@ -10,6 +10,9 @@ from random import choices
 size = int(input('Number of words: '))
 
 def word(size, lst):
+    if size < 0:
+        print('The data is incorrect')
+    
     listWord = []
     for i in range(size):
         selection = choices(lst, k=3)
