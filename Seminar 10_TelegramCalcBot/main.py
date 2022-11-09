@@ -195,200 +195,135 @@ def addition(message):
     logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ numbers = {get_msg_bot}')
     if operation == ['/summa']:
         a, b = exception.numbers(get_msg_bot)
-        if a == 0 and b == 0:
-            send_msg = 'Упс!'
-            bot.send_message(message.chat.id, send_msg)
-            log_result = 'error'
-        else:
-            result = sum.sum(a, b)
-            send_msg = f'{a} + {b} = {result}'
-            log_result = f'{result}'
-            bot.send_message(message.chat.id, send_msg)
+        result = sum.sum(a, b)
+        send_msg = f'{a} + {b} = {result}'
+        log_result = f'{result}'
+        bot.send_message(message.chat.id, send_msg)
         logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ result = {log_result}')
         logging.info('End bot')
 
     elif operation == ['/subtraction']:
         a, b = exception.numbers(get_msg_bot)
-        if a == 0 and b == 0:
-            send_msg = 'Упс!'
-            bot.send_message(message.chat.id, send_msg)
-            log_result = 'error'
-        else:
-            result = sub.sub(a, b)
-            send_msg = f'{a} - {b} = {result}'
-            log_result = f'{result}'
-            bot.send_message(message.chat.id, send_msg)
+        result = sub.sub(a, b)
+        send_msg = f'{a} - {b} = {result}'
+        log_result = f'{result}'
+        bot.send_message(message.chat.id, send_msg)
         logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ result = {log_result}')
         logging.info('End bot')
 
     elif operation == ['/multiplication']:
         a, b = exception.numbers(get_msg_bot)
-        if a == 0 and b == 0:
-            send_msg = 'Упс!'
-            bot.send_message(message.chat.id, send_msg)
-            log_result = 'error'
-        else:
-            result = mult.mult(a, b)
-            send_msg = f'{a} * {b} = {result}'
-            log_result = f'{result}'
-            bot.send_message(message.chat.id, send_msg)
+        result = mult.mult(a, b)
+        send_msg = f'{a} * {b} = {result}'
+        log_result = f'{result}'
+        bot.send_message(message.chat.id, send_msg)
         logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ result = {log_result}')
         logging.info('End bot')
 
     elif operation == ['/pow']:
         a, b = exception.numbers(get_msg_bot)
-        if a == 0 and b == 0:
-            send_msg = 'Упс!'
-            bot.send_message(message.chat.id, send_msg)
-            log_result = 'error'
-        else:
-            result = pow.pow(a, b)
-            send_msg = f'{a} ** {b} = {result}'
-            log_result = f'{result}'
-            bot.send_message(message.chat.id, send_msg)
+        result = pow.pow(a, b)
+        send_msg = f'{a} ** {b} = {result}'
+        log_result = f'{result}'
+        bot.send_message(message.chat.id, send_msg)
         logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ result = {log_result}')
         logging.info('End bot')
 
     elif operation == ['/division']:
         a, b = exception.numbers(get_msg_bot)
-        if a == 0 and b == 0:
-            send_msg = 'Упс!'
-            bot.send_message(message.chat.id, send_msg)
-            log_result = 'error'
-        else:
-            result = div.div(a, b)
-            send_msg = f'{a} / {b} = {result}'
-            log_result = f'{result}'
-            bot.send_message(message.chat.id, send_msg)
+        result = div.div(a, b)
+        send_msg = f'{a} / {b} = {result}'
+        log_result = f'{result}'
+        bot.send_message(message.chat.id, send_msg)
         logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ result = {log_result}')
         logging.info('End bot')
 
     elif operation == ['/square_root']:
         a = exception.square_root(get_msg_bot)
         print(a)
-        if a == 0:
-            send_msg = 'Упс!'
-            bot.send_message(message.chat.id, send_msg)
-            log_result = 'error'
-        else:
-            result = pow.pow(a, 0.5)
-            send_msg = f'{a} ** 0.5 = {result}'
-            log_result = f'{result}'
-            bot.send_message(message.chat.id, send_msg)
+        result = pow.pow(a, 0.5)
+        send_msg = f'{a} ** 0.5 = {result}'
+        log_result = f'{result}'
+        bot.send_message(message.chat.id, send_msg)
         logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ result = {log_result}')
         logging.info('End bot')
 
     elif operation == ['/intDiv']:
         a, b = exception.numbers(get_msg_bot)
-        if a == 0 and b == 0:
-            send_msg = 'Упс!'
-            bot.send_message(message.chat.id, send_msg)
-            log_result = 'error'
-        else:
-            result = intDiv.intDiv(a, b)
-            send_msg = f'{a} // {b} = {result}'
-            log_result = f'{result}'
-            bot.send_message(message.chat.id, send_msg)
+        result = intDiv.intDiv(a, b)
+        send_msg = f'{a} // {b} = {result}'
+        log_result = f'{result}'
+        bot.send_message(message.chat.id, send_msg)
         logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ result = {log_result}')
         logging.info('End bot')
 
     elif operation == ['/remDiv']:
         a, b = exception.numbers(get_msg_bot)
-        if a == 0 and b == 0:
-            send_msg = 'Упс!'
-            bot.send_message(message.chat.id, send_msg)
-            log_result = 'error'
-        else:
-            result = remDiv.remDiv(a, b)
-            send_msg = f'{a} % {b} = {result}'
-            log_result = f'{result}'
-            bot.send_message(message.chat.id, send_msg)
+        result = remDiv.remDiv(a, b)
+        send_msg = f'{a} % {b} = {result}'
+        log_result = f'{result}'
+        bot.send_message(message.chat.id, send_msg)
         logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ result = {log_result}')
         logging.info('End bot')
 
     elif operation == ['/summa_comp']:
         a, b = exception.complex_num(get_msg_bot)
-        if a == 0 and b == 0:
-            send_msg = 'Упс!'
-            bot.send_message(message.chat.id, send_msg)
-            log_result = 'error'
-        else:
-            result = sum.sum(a, b)
-            send_msg = f'{a} + {b} = {result}'
-            log_result = f'{result}'
-            bot.send_message(message.chat.id, send_msg)
+        result = sum.sum(a, b)
+        send_msg = f'{a} + {b} = {result}'
+        log_result = f'{result}'
+        bot.send_message(message.chat.id, send_msg)
         logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ result = {log_result}')
         logging.info('End bot')
 
     elif operation == ['/subtraction_comp']:
         a, b = exception.complex_num(get_msg_bot)
-        if a == 0 and b == 0:
-            send_msg = 'Упс!'
-            bot.send_message(message.chat.id, send_msg)
-            log_result = 'error'
-        else:
-            result = sub.sub(a, b)
-            send_msg = f'{a} - {b} = {result}'
-            log_result = f'{result}'
-            bot.send_message(message.chat.id, send_msg)
+        result = sub.sub(a, b)
+        send_msg = f'{a} - {b} = {result}'
+        log_result = f'{result}'
+        bot.send_message(message.chat.id, send_msg)
         logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ result = {log_result}')
         logging.info('End bot')
 
     elif operation == ['/multiplication_comp']:
         a, b = exception.complex_num(get_msg_bot)
-        if a == 0 and b == 0:
-            send_msg = 'Упс!'
-            bot.send_message(message.chat.id, send_msg)
-            log_result = 'error'
-        else:
-            result = mult.mult(a, b)
-            send_msg = f'{a} * {b} = {result}'
-            log_result = f'{result}'
-            bot.send_message(message.chat.id, send_msg)
+        result = mult.mult(a, b)
+        send_msg = f'{a} * {b} = {result}'
+        log_result = f'{result}'
+        bot.send_message(message.chat.id, send_msg)
         logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ result = {log_result}')
         logging.info('End bot')
 
     elif operation == ['/pow_comp']:
         a, b = exception.complex_pow(get_msg_bot)
-        if a == 0 and b == 0:
-            send_msg = 'Упс!'
-            bot.send_message(message.chat.id, send_msg)
-            log_result = 'error'
-        else:
-            result = pow.pow(a, b)
-            send_msg = f'{a} ** {b} = {result}'
-            log_result = f'{result}'
-            bot.send_message(message.chat.id, send_msg)
+        result = pow.pow(a, b)
+        send_msg = f'{a} ** {b} = {result}'
+        log_result = f'{result}'
+        bot.send_message(message.chat.id, send_msg)
         logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ result = {log_result}')
         logging.info('End bot')
 
     elif operation == ['/square_root_comp']:
         a = exception.complex_square(get_msg_bot)
-        if a == 0:
-            send_msg = 'Упс!'
-            bot.send_message(message.chat.id, send_msg)
-            log_result = 'error'
-        else:
-            result = pow.pow(a, 0.5)
-            send_msg = f'{a} ** 0.5 = {result}'
-            log_result = f'{result}'
-            bot.send_message(message.chat.id, send_msg)
+        result = pow.pow(a, 0.5)
+        send_msg = f'{a} ** 0.5 = {result}'
+        log_result = f'{result}'
+        bot.send_message(message.chat.id, send_msg)
         logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ result = {log_result}')
         logging.info('End bot')
     
     elif operation == ['/division_comp']:
         a, b = exception.complex_num(get_msg_bot)
-        if a == 0 and b == 0:
-            send_msg = 'Упс!'
-            bot.send_message(message.chat.id, send_msg)
-            log_result = 'error'
-        else:
-            result = div.div(a, b)
-            send_msg = f'{a} / {b} = {result}'
-            log_result = f'{result}'
-            bot.send_message(message.chat.id, send_msg)
+        result = div.div(a, b)
+        send_msg = f'{a} / {b} = {result}'
+        log_result = f'{result}'
+        bot.send_message(message.chat.id, send_msg)
         logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ result = {log_result}')
         logging.info('End bot')
+
+    elif a == 0 and b == 0:   
+        send_msg = 'Упс!'
+        bot.send_message(message.chat.id, send_msg)
+        log_result = 'error'
 
     send_msg = f'Для нового запроса введите команду /start'
     bot.send_message(message.chat.id, send_msg)
