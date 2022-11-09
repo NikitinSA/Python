@@ -4,8 +4,10 @@ from settings import API_KEY
 import sum
 import sub
 import mult
-import sqrt
+import pow
 import div
+import intDiv
+import remDiv
 import exception
 import logging
 
@@ -45,8 +47,8 @@ def ration(message):
     button4 = types.KeyboardButton(f'/pow')
     button5 = types.KeyboardButton(f'/square_root')
     button6 = types.KeyboardButton(f'/division')
-    button7 = types.KeyboardButton(f'/integer_division')
-    button8 = types.KeyboardButton(f'/remainder_of_division')
+    button7 = types.KeyboardButton(f'/intDiv')
+    button8 = types.KeyboardButton(f'/remDiv')
     markup.add(button1, button2, button3, button4, button5, button6, button7, button8)
     send_msg = f'Какую операцию будем производить?'
     bot.send_message(message.chat.id, send_msg, reply_markup=markup)
@@ -85,9 +87,9 @@ def summa(message):
     bot.send_message(message.chat.id, send_msg, reply_markup=markup)
 
 
-@bot.message_handler(commands=['integer_division'])
+@bot.message_handler(commands=['intDiv'])
 def summa(message):
-    logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ integer_division')
+    logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ intDiv')
     global operation
     operation = message.text.split()
     markup = types.ForceReply(selective=True)
@@ -115,9 +117,9 @@ def summa(message):
     bot.send_message(message.chat.id, send_msg, reply_markup=markup)
 
 
-@bot.message_handler(commands=['remainder_of_division'])
+@bot.message_handler(commands=['remDiv'])
 def summa(message):
-    logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ remainder_of_division')
+    logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ remDiv')
     global operation
     operation = message.text.split()
     markup = types.ForceReply(selective=True)
@@ -251,7 +253,7 @@ def addition(message):
             bot.send_message(message.chat.id, send_msg)
             log_result = 'error'
         else:
-            result = sqrt.sqrt(a, b)
+            result = pow.pow(a, b)
             send_msg = f'{a} ** {b} = {result}'
             log_result = f'{result}'
             bot.send_message(message.chat.id, send_msg)
@@ -280,35 +282,35 @@ def addition(message):
             bot.send_message(message.chat.id, send_msg)
             log_result = 'error'
         else:
-            result = sqrt.sqrt(a, 0.5)
+            result = pow.pow(a, 0.5)
             send_msg = f'{a} ** 0.5 = {result}'
             log_result = f'{result}'
             bot.send_message(message.chat.id, send_msg)
         logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ result = {log_result}')
         logging.info('End bot')
 
-    elif operation == ['/integer_division']:
+    elif operation == ['/intDiv']:
         a, b = exception.numbers(get_msg_bot)
         if a == 0 and b == 0:
             send_msg = 'Упс!'
             bot.send_message(message.chat.id, send_msg)
             log_result = 'error'
         else:
-            result = div.div(a, b)
+            result = intDiv.intDiv(a, b)
             send_msg = f'{a} // {b} = {result}'
             log_result = f'{result}'
             bot.send_message(message.chat.id, send_msg)
         logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ result = {log_result}')
         logging.info('End bot')
 
-    elif operation == ['/remainder_of_division']:
+    elif operation == ['/remDiv']:
         a, b = exception.numbers(get_msg_bot)
         if a == 0 and b == 0:
             send_msg = 'Упс!'
             bot.send_message(message.chat.id, send_msg)
             log_result = 'error'
         else:
-            result = div.div(a, b)
+            result = remDiv.remDiv(a, b)
             send_msg = f'{a} % {b} = {result}'
             log_result = f'{result}'
             bot.send_message(message.chat.id, send_msg)
@@ -364,7 +366,7 @@ def addition(message):
             bot.send_message(message.chat.id, send_msg)
             log_result = 'error'
         else:
-            result = sqrt.sqrt(a, b)
+            result = pow.pow(a, b)
             send_msg = f'{a} ** {b} = {result}'
             log_result = f'{result}'
             bot.send_message(message.chat.id, send_msg)
@@ -378,7 +380,7 @@ def addition(message):
             bot.send_message(message.chat.id, send_msg)
             log_result = 'error'
         else:
-            result = sqrt.sqrt(a, 0.5)
+            result = pow.pow(a, 0.5)
             send_msg = f'{a} ** 0.5 = {result}'
             log_result = f'{result}'
             bot.send_message(message.chat.id, send_msg)
