@@ -26,17 +26,6 @@ def start(message):
     send_msg = f'Привет, {message.from_user.first_name}. Я бот-калькулятор! С какими числами будем работать?'
     bot.send_message(message.chat.id, send_msg, reply_markup=markup)
 
-@bot.message_handler(commands=['start'])
-def start(message):
-    logging.info('Start bot')
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    button1 = types.KeyboardButton(f'/rational_numbers')
-    button2 = types.KeyboardButton(f'/complex_number')
-    markup.add(button1, button2)
-    send_msg = f'Привет, {message.from_user.first_name}. Это бот-калькулятор! С какими числами будем работать?'
-    bot.send_message(message.chat.id, send_msg, reply_markup=markup)
-
-
 @bot.message_handler(commands=['rational_numbers'])
 def ration(message):
     logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ rational_numbers')
@@ -54,8 +43,8 @@ def ration(message):
     bot.send_message(message.chat.id, send_msg, reply_markup=markup)
 
 @bot.message_handler(commands=['complex_number'])
-def ration(message):
-    logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ rational_numbers')
+def complex(message):
+    logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ complex_number')
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
     button1 = types.KeyboardButton(f'/summa_comp')
     button2 = types.KeyboardButton(f'/subtraction_comp')
@@ -78,7 +67,7 @@ def summa(message):
 
 
 @bot.message_handler(commands=['subtraction'])
-def summa(message):
+def substraction(message):
     logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ subtraction')
     global operation
     operation = message.text.split()
@@ -88,7 +77,7 @@ def summa(message):
 
 
 @bot.message_handler(commands=['intDiv'])
-def summa(message):
+def integer_div(message):
     logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ intDiv')
     global operation
     operation = message.text.split()
@@ -98,7 +87,7 @@ def summa(message):
 
 
 @bot.message_handler(commands=['multiplication'])
-def summa(message):
+def multiplication(message):
     logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ multiplication')
     global operation
     operation = message.text.split()
@@ -108,7 +97,7 @@ def summa(message):
 
 
 @bot.message_handler(commands=['division'])
-def summa(message):
+def division(message):
     logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ division')
     global operation
     operation = message.text.split()
@@ -118,7 +107,7 @@ def summa(message):
 
 
 @bot.message_handler(commands=['remDiv'])
-def summa(message):
+def rem_division(message):
     logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ remDiv')
     global operation
     operation = message.text.split()
@@ -127,7 +116,7 @@ def summa(message):
     bot.send_message(message.chat.id, send_msg, reply_markup=markup)
 
 @bot.message_handler(commands=['square_root'])
-def summa(message):
+def square_root(message):
     logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ square_root')
     global operation
     operation = message.text.split()
@@ -137,7 +126,7 @@ def summa(message):
 
 
 @bot.message_handler(commands=['pow'])
-def summa(message):
+def power(message):
     logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ pow')
     global operation
     operation = message.text.split()
@@ -155,7 +144,7 @@ def summa_comp(message):
     bot.send_message(message.chat.id, send_msg, reply_markup=markup)
 
 @bot.message_handler(commands=['subtraction_comp'])
-def summa(message):
+def sub_comp(message):
     logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ subtraction_comp')
     global operation
     operation = message.text.split()
@@ -164,7 +153,7 @@ def summa(message):
     bot.send_message(message.chat.id, send_msg, reply_markup=markup)
 
 @bot.message_handler(commands=['multiplication_comp'])
-def summa(message):
+def mult_comp(message):
     logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ multiplication_comp')
     global operation
     operation = message.text.split()
@@ -173,7 +162,7 @@ def summa(message):
     bot.send_message(message.chat.id, send_msg, reply_markup=markup)
 
 @bot.message_handler(commands=['pow_comp'])
-def summa(message):
+def pow_comp(message):
     logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ pow_comp')
     global operation
     operation = message.text.split()
@@ -182,7 +171,7 @@ def summa(message):
     bot.send_message(message.chat.id, send_msg, reply_markup=markup)
 
 @bot.message_handler(commands=['square_root_comp'])
-def summa(message):
+def square_root_comp(message):
     logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ square_root_comp')
     global operation
     operation = message.text.split()
@@ -191,7 +180,7 @@ def summa(message):
     bot.send_message(message.chat.id, send_msg, reply_markup=markup)
 
 @bot.message_handler(commands=['division_comp'])
-def summa(message):
+def division_comp(message):
     logging.info(f'{message.from_user.first_name}/ {message.from_user.id}/ division_comp')
     global operation
     operation = message.text.split()
