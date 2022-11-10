@@ -1,6 +1,6 @@
 import telebot
 from telebot import types
-from settings import API_KEY
+from settings import API_KEY #создать файл settings.py и вписать туда токен своего бота -> API_KEY = 'токен'
 import sum
 import sub
 import mult
